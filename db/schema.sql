@@ -1,0 +1,15 @@
+DROP DATABASE IF EXISTS ludus_database;
+
+CREATE DATABASE ludus_database;
+
+USE ludus_database;
+
+CREATE TABLE dev_names (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  dev_name VARCHAR(30) NOT NULL
+)
+
+CREATE TABLE seeded_games (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  seeded_game VARCHAR(30) NOT NULL
+)
