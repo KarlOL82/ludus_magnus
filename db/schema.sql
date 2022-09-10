@@ -1,15 +1,20 @@
-DROP DATABASE IF EXISTS ludus_database;
+DROP DATABASE IF EXISTS ludus_db;
 
-CREATE DATABASE ludus_database;
+CREATE DATABASE ludus_db;
 
-USE ludus_database;
+USE ludus_db;
 
-CREATE TABLE dev_names (
+CREATE TABLE dev_table (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  dev_name VARCHAR(30) NOT NULL
-)
+  name VARCHAR(30) NOT NULL,
+  games VARCHAR(30) NOT NULL
+  
+);
 
-CREATE TABLE seeded_games (
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  seeded_game VARCHAR(30) NOT NULL
-)
+-- ALTER TABLE dev_table
+-- ADD games_column VARCHAR(30) ;
+-- CREATE TABLE seeded_games (
+--   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+--   game VARCHAR(30) NOT NULL
+-- --   FOREIGN KEY (dev_names)
+-- );
