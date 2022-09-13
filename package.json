@@ -1,20 +1,15 @@
 {
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
-    "express-session": "^1.17.1",
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
-  },
-  "scripts": {
-    "start": "node server.js"
-  },
   "name": "ludus_magnus",
-  "description": "An online discussion forum for console and PC games.",
   "version": "1.0.0",
+  "description": "An online discussion forum for console and PC games.",
   "main": "server.js",
-  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js",
+    "lint": "npx eslint --ext .js ./",
+    "watch": "nodemon server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KarlOL82/ludus_magnus.git"
@@ -25,5 +20,17 @@
   "bugs": {
     "url": "https://github.com/KarlOL82/ludus_magnus/issues"
   },
-  "homepage": "https://github.com/KarlOL82/ludus_magnus#readme"
+  "homepage": "https://github.com/KarlOL82/ludus_magnus#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bootstrap": "^5.2.1",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.6"
+  }
 }
