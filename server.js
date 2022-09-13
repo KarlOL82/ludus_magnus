@@ -10,7 +10,9 @@ const mysql = require("mysql2");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// app.engine('handlebars', hbs.engine);
+app.engine('handlebars', handlebars({
+    layoutsDir: __dirname + '/views/layouts',
+    }));
 app.set('view engine', 'handlebars');
 
 
