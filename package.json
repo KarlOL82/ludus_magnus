@@ -6,5 +6,24 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "ludus_magnus",
+  "description": "An online discussion forum for console and PC games.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarlOL82/ludus_magnus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarlOL82/ludus_magnus/issues"
+  },
+  "homepage": "https://github.com/KarlOL82/ludus_magnus#readme"
 }
