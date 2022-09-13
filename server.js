@@ -22,7 +22,7 @@ const db = mysql.createConnection(
     {
       host: 'localhost',
       user: 'root',
-      password: 'N3buchadnezzar!3',
+      password: 'Delicon1234%',
       database: 'ludus_db'
     },
     console.log(`Connected to the teamDirectory_db database.`)
