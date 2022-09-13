@@ -10,13 +10,10 @@ const mysql = require("mysql2");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
+app.engine('handlebars', handlebars.engine);
+
 app.set('view engine', 'handlebars');
-
-app.engine('handlebars', handlebars({
-    layoutsDir: __dirname + '/views/layouts',
-    }));
-
-    
 
 
 app.use(express.json());
@@ -33,15 +30,15 @@ app.get('/', (req, res) => {
 
 
 
-const db = mysql.createConnection(
-    {
-      host: 'localhost',
-      user: 'root',
-      password: 'Delicon1234%',
-      database: 'ludus_db'
-    },
-    console.log(`Connected to the teamDirectory_db database.`)
-);
+// const db = mysql.createConnection(
+//     {
+//       host: 'localhost',
+//       user: 'root',
+//       password: 'Delicon1234%',
+//       database: 'ludus_db'
+//     },
+//     console.log(`Connected to the teamDirectory_db database.`)
+// );
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
