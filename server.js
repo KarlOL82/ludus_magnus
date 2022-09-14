@@ -22,10 +22,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static('public'));
-// app.get('/', (req, res) => res.send('Hello World !'));
+
 
 app.get('/', (req, res) => {
-    //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+    
     res.render('main', {layout : 'homepage'});
     });
 
