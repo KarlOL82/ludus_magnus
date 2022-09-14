@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+</head>
+<body>
+
+<div>
+    <div class="head row">
+        {{#if logged_in}}
+        <div>{{id}}</div>
+        {{/if}}
+    </div>
+    <div class="useInfo col">
+        <form>
+            {{favoriteGame}}
+        </form>
+        <form>
+            {{location}}
+        </form>
+        <form>
+            {{userBio}}
+        </form>
+        <li>{{Forum}}</li>
+    </div>
+</div>   
+<footer>
+    <script src="/public/js/login.js"></script>
+    <script src="/models/userProfile.js"></script>
+</footer> 
+</body>
+</html>
