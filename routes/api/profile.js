@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const UserProfile = require('../../models/userProfile');
+const UserProfile = require('../../models/user');
 
 router.get('/:id', async (req, res) => {
     try {
