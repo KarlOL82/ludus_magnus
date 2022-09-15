@@ -1,14 +1,20 @@
-const Profiles = require('./userProfiles');
-const gameChat = require('./gameChat.js');
-cosnt Forum = require('./Forum.js');
+const User = require('./user');
+const GameChat = require('./gameChat');
+const Forum = require('./Forum');
 
-Forum.hasMany(gameChat, {
-    foreignKEy: 'forum_id',
-});
-
-gameChat.belongsTo(Forum, {
+Forum.hasMany(GameChat, {
     foreignKey: 'forum_id',
 });
 
+GameChat.belongsTo(Forum, {
+    foreignKey: 'forum_id',
+});
 
-module.exports = { Profiles, gameChat, Forum};
+User.hasMany(GameChat, {
+    foreignKey: 'user_id',
+});
+
+GameChat.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+module.exports = { User, GameChat, Forum};

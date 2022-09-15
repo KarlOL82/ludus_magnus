@@ -30,7 +30,7 @@ Forum.init(
         len:[30],
       },
     },
-    gamename: {
+    game_name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {

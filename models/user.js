@@ -26,19 +26,19 @@ User.init(
       },
     },
     userName:{
-      type: STRING,
+      type: DataTypes.STRING,
       allowNull: false
   },
   favoriteGame:{
-      type: STRING [50],
+      type: DataTypes.STRING (50),
       allowNull: true
   },
   userBio:{
-      type: STRING [500],
+      type: DataTypes.STRING (500),
       allowNull: true
   },
   location:{
-      type: STRING[65],
+      type: DataTypes.STRING(65),
       allowNull: false
   }
   },
