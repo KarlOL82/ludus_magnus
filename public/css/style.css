@@ -1,7 +1,21 @@
+:root {
+    /* declare a variable with `--` syntax */
+    --gunMetal: #30343F;
+    --light: #FAFAFF;
+    --litePurp: #E4D9FF;
+    --blue: #273469;
+    --bluer: #1E2749;
+    
+  }
+
 .container {
     justify-content: center;
 };
 
 body {
     background-color: red;
-}
+};
+
+
+
+
