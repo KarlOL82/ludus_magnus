@@ -26,7 +26,7 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     
-    res.render('main', {layout : 'homepage'});
+    res.render('homepage', {layout : 'main'});
     });
 
 
