@@ -22,30 +22,30 @@ GameChat.init(
       allowNull: false,
       defaultValue: 1
     },
-    username: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id',
-        unique: true
+        
       }
     },
-    // location_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'location',
-    //     key: 'id',
-    //     unique: false
-    //   }
-    // }
+    forum_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'forum',
+        key: 'id',
+        
+      }
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'trip'
+    modelName: 'gameChat'
   }
 );
 
-module.exports = Trip;
+module.exports = GameChat;
