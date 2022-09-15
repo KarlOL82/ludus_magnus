@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8aef2e789ebe38b2370213f779ee4aed86e252d0
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
@@ -56,4 +60,8 @@ Forum.init(
   }
 );
 
+<<<<<<< HEAD
 module.exports = Forum;
+=======
+module.exports = Forum;
+>>>>>>> 8aef2e789ebe38b2370213f779ee4aed86e252d0
