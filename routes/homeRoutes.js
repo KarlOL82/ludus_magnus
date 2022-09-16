@@ -7,7 +7,7 @@ const { Op } = require('sequelize');
 
 // Route "/login"
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     
     res.render('homepage', {layout : 'main'});
     });
