@@ -3,8 +3,8 @@ const express = require('express');
 const exhbs = require('express-handlebars');
 const session = require('express-session');
 const routes = require('./controllers');
-const utils = require("util");
-const mysql = require("mysql2");
+// const utils = require("util");
+// const mysql = require("mysql2");
 const sequelize = require('./config/connection');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -18,6 +18,7 @@ const sess = {
     secret: process.env.SESSION_SECRET,
     cookie: {
       maxAge: 60 * 60 * 1000,
+      // secure: false
     },
     resave: false,
     saveUninitialized: true,
@@ -43,6 +44,8 @@ app.use(routes);
 
 
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-  });
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () =>
+    console.log(`Now listening: http://localhost:${PORT}`)
+  );
+});

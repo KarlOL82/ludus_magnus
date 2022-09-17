@@ -4,7 +4,7 @@ const { GameChat } = require('../../models');
 // GET all locations
 router.get('/', async (req, res) => {
   try {
-    const chatData = await Location.findAll();
+    const chatData = await GameChat.findAll();
     res.status(200).json(chatData);
   } catch (err) {
     res.status(500).json(err);
