@@ -13,7 +13,7 @@ const { Op } = require('sequelize');
 //     });
 
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/home-routes', withAuth, async (req, res) => {
   try {
 
     const where = {
