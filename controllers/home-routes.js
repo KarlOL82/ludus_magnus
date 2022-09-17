@@ -1,23 +1,49 @@
 const router = require('express').Router();
-const { User } = require('../models');
-const withAuth = require('../utils/auth');
+const { User, Forum, GameChat } = require('../models');
+const { withAuth, withNoAuth } = require('../utils/auth');
+const { Op } = require('sequelize');
 
 // Route "/"
 
 // Route "/login"
 
-// TODO: Add a comment describing the functionality of the withAuth middleware
-router.get('/', withAuth, async (req, res) => {
+// router.get('/', (req, res) => {
+    
+//     res.render('homepage', {layout : 'main'});
+//     });
+
+
+router.get('/home-routes', withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] }
+
+    const where = {
+      user_id: {
+        [Op.ne]: req.session.user_id,
+      },
+    };
+
+    const { search_name } = req.query;
+
+    if(search_name) {
+      where.name = {
+        [Op.like]: `%${search_name}%`
+      };
+    }
+
+    const userData = await Forum.findAll({
+      where,
+      include: {
+        model: User,
+        attributes: ['id', 'forumtitle'],
+      },
     });
 
-    const users = userData.map((project) => project.get({ plain: true }));
+    const forums = userData.map((forum) => forum.get({ plain: true }));
 
     res.render('homepage', {
-      users,
-      // TODO: Add a comment describing the functionality of this property
+      forums,
+      searchName: search_name,
+      
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -25,23 +51,29 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
-  // TODO: Add a comment describing the functionality of this if statement
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
+router.get('/profilePage', withAuth, async (req, res) => {
 
+  const userData = await User.findByPk(req.session.user_id, {
+    attributes: ['id','user_name'],
+    include: Forum
+  });
+
+  const user = userData.toJSON();
+
+  console.log(user);
+
+  res.render('user', {
+    user,
+    logged_in: req.session.logged_in,
+  });
+});
+
+router.get('/login', withNoAuth, (req, res) => {
   res.render('login');
 });
 
+router.get('/signUp', withNoAuth, (req, res) => {
+  res.render('signUp');
+});
+
 module.exports = router;
-
-
-// Route "/dashboard"
-
-// Route "/dashboard/new"
-
-// Route "/dashboard/edit/:id"
-
-// Route "/post/:id"

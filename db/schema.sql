@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS ludus_db;
+DROP DATABASE IF EXISTS user_db;
 
-CREATE DATABASE ludus_db;
+CREATE DATABASE user_db;
 
-USE ludus_db;
+USE user_db;
 
