@@ -17,10 +17,10 @@ router.get('/', withAuth, async (req, res) => {
       ],
     });
 
-    // Serialize data so the template can read it
+    
     const chats = chatData.map((gameChat) => gameChat.get({ plain: true }));
 console.log(req.session.logged_in);
-    // Pass serialized data and session flag into template
+    
     res.render('homepage', {
       layout : 'main', 
       chats, 

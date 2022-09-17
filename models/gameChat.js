@@ -14,11 +14,11 @@ GameChat.init(
       autoIncrement: true
     },
     chat_name: {
-      type: DataTypes.DECIMAL(10, 2),
+      type: DataTypes.STRING,
       allowNull: true
     },
     game_name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       defaultValue: 1
     },
@@ -30,13 +30,9 @@ GameChat.init(
         
       }
     },
-    forum_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'forum',
-        key: 'id',
-        
-      }
+    chatText: {
+      type: DataTypes.TEXT('long'),
+      
     }
   },
   {
