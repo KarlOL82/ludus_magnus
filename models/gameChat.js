@@ -14,11 +14,11 @@ GameChat.init(
       autoIncrement: true
     },
     chat_name: {
-      type: DataTypes.DECIMAL(10, 2),
+      type: DataTypes.STRING,
       allowNull: true
     },
     game_name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       defaultValue: 1
     },

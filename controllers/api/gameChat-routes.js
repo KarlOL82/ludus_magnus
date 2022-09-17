@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { GameChat } = require('../../models');
+const { GameChat, User } = require('../../models');
 
-// GET all locations
+
+
 router.get('/', async (req, res) => {
   try {
     const chatData = await GameChat.findAll();
@@ -11,12 +12,12 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET a single location
+
 router.get('/:id', async (req, res) => {
   try {
     const chatData = await GameChat.findByPk(req.params.id, {
       // JOIN with travellers, using the Trip through table
-      include: GameChat
+      include: User
     });
 
     if (!chatData) {
