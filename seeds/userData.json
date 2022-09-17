@@ -1,27 +1,38 @@
 [
   {
-    "name": "Sal",
-    "email": "sal@hotmail.com",
-    "password": "password12345"
-  },
-  {
+    "id": "01",
     "name": "Lernantino",
     "email": "lernantino@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "favoritegame": "Skyrim", 
+    "userBio":"Not fond of cabinets",
+    "location": "Ohio"
   },
   {
+    "id": "02",
     "name": "Amiko",
     "email": "amiko2k20@aol.com",
-    "password": "password12345"
+    "password": "password12345",
+    "favoritegame": "Starcraft", 
+    "userBio":"Started her career in programming towards the end of the Russian civil war in 1917. She wears size 16 shoes",
+    "location": "Washington"
   },
   {
+    "id": "03",
     "name": "Jordan",
     "email": "jordan99@msn.com",
-    "password": "password12345"
+    "password": "password12345",
+    "favoritegame": "Darksouls", 
+    "userBio":"Little is known about Jordan except for his love of chaising train",
+    "location": "Montana"
   },
   {
+    "id": "04",
     "name": "Blake",
     "email": "the_blake@yahoo.com",
-    "password": "password12345"
+    "password": "password12345",
+    "favoritegame": "Escape from tarkov", 
+    "userBio":"During early life he found himself facinated with birdes, to this day he sets aside an hour every mourning in attemps to catch his favorite bird the common Dickcissel",
+    "location": "Florida"
   }
 ]

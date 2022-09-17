@@ -1,0 +1,36 @@
+
+<body>
+    <div class="container-sm-4 text-center justify-center">
+      
+      <form class="col-sm-4 login-form">
+        <div class="mb-3">
+          <label for="email-login" class="form-label">email</label>
+          <input
+
+            type="email"
+            class="form-control form-control-lg"
+            id="email-login"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            Please enter your Ludus Magnus username
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="password-login" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password-login"
+          />
+        </div>
+  {{!-- <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div> --}}
+  <button type="submit" class="btn btn-primary login-form">Submit</button>
+</form>
+   
+<script src="/js/login.js"></script>
+</body>

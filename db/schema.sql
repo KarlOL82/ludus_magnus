@@ -1,15 +1,6 @@
-DROP DATABASE IF EXISTS ludus_db;
+DROP DATABASE IF EXISTS user_db;
 
-CREATE DATABASE ludus_db;
+CREATE DATABASE user_db;
 
-USE ludus_db;
 
-CREATE TABLE dev_table (
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(30) NOT NULL,
-  games VARCHAR(30) NOT NULL,
-  bio VARCHAR(30) NOT NULL
-);
-ALTER TABLE dev_table
-MODIFY bio
-varchar(500);
+
