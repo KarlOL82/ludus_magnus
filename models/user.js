@@ -16,6 +16,10 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -31,22 +35,19 @@ User.init(
         len: [6],
       },
     },
-    name:{
-      type: DataTypes.STRING,
-      allowNull: false
-  },
-  favoriteGame:{
-      type: DataTypes.STRING (50),
+
+    favoriteGame: {
+      type: DataTypes.STRING(50),
       allowNull: true
-  },
-  userBio:{
-      type: DataTypes.STRING (500),
+    },
+    userBio: {
+      type: DataTypes.STRING(500),
       allowNull: true
-  },
-  location:{
+    },
+    location: {
       type: DataTypes.STRING(65),
       allowNull: false
-  }
+    }
   },
   {
     hooks: {
