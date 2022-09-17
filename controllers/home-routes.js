@@ -3,17 +3,9 @@ const { User, Forum, GameChat } = require('../models');
 const { withAuth, withAuthAPI } = require('../utils/auth');
 const { Op } = require('sequelize');
 
-// Route "/"
-
-// Route "/login"
-
-// router.get('/', (req, res) => {
-    
-//     res.render('homepage', );
-//     });
 
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const chatData = await GameChat.findAll({
@@ -27,7 +19,7 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const chats = chatData.map((gameChat) => gameChat.get({ plain: true }));
-
+console.log(req.session.logged_in);
     // Pass serialized data and session flag into template
     res.render('homepage', {
       layout : 'main', 
@@ -36,10 +28,11 @@ router.get('/', async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    console.log(req.session.logged_in);
   }
 });
 
-router.get('/profilePage', withAuthAPI, async (req, res) => {
+router.get('/profilePage', withAuth, async (req, res) => {
 
   const dbUserData = await User.findByPk(req.session.user_id, {
     attributes: ['id','user_name'],
