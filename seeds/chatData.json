@@ -3,28 +3,32 @@
     "id": "01",
     "chat_name": "Skyrim is good",
     "game_name": "Skyrim",
-    "user_id": "01"
+    "user_id": "01",
+    "chatText": "Dragons are kickass"
     
   },
   {
     "id": "02",
     "chat_name": "Dark Souls is bad",
     "game_name": "Dark Souls",
-    "user_id": "02"
+    "user_id": "02",
+    "chatText": "NPCs are weird"
     
   },
   {
     "id": "03",
     "chat_name": "Starcraft and you",
     "game_name": "Starcraft",
-    "user_id": "03"
+    "user_id": "03",
+    "chatText": "Space is fun"
     
   },
   {
     "id": "04",
     "chat_name": "OCD 4 COD",
     "game_name": "Call of Duty",
-    "user_id": "01"
+    "user_id": "01",
+    "chatText": "I totally shot that dude"
     
   }
 ]

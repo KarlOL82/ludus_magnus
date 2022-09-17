@@ -30,13 +30,9 @@ GameChat.init(
         
       }
     },
-    forum_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'forum',
-        key: 'id',
-        
-      }
+    chatText: {
+      type: DataTypes.TEXT('long'),
+      
     }
   },
   {
