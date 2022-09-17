@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Forum, GameChat } = require('../models');
-const { withAuth, withNoAuth } = require('../utils/auth');
+const { withAuth, withAuthAPI } = require('../utils/auth');
 const { Op } = require('sequelize');
 
 // Route "/"
@@ -9,7 +9,7 @@ const { Op } = require('sequelize');
 
 // router.get('/', (req, res) => {
     
-//     res.render('homepage', {layout : 'main'});
+//     res.render('homepage', );
 //     });
 
 
@@ -29,7 +29,8 @@ router.get('/', async (req, res) => {
     const chats = chatData.map((gameChat) => gameChat.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
+    res.render('homepage', {
+      layout : 'main', 
       chats, 
       logged_in: req.session.logged_in 
     });
@@ -38,7 +39,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/profilePage', withAuth, async (req, res) => {
+router.get('/profilePage', withAuthAPI, async (req, res) => {
 
   const dbUserData = await User.findByPk(req.session.user_id, {
     attributes: ['id','user_name'],
@@ -55,11 +56,11 @@ router.get('/profilePage', withAuth, async (req, res) => {
   });
 });
 
-router.get('/login', withNoAuth, (req, res) => {
+router.get('/login',  (req, res) => {
   res.render('login');
 });
 
-router.get('/signUp', withNoAuth, (req, res) => {
+router.get('/signUp',  (req, res) => {
   res.render('signUp');
 });
 
