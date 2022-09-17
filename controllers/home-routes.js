@@ -7,10 +7,10 @@ const { Op } = require('sequelize');
 
 // Route "/login"
 
-router.get('/', (req, res) => {
+// router.get('/', (req, res) => {
     
-    res.render('homepage', {layout : 'main'});
-    });
+//     res.render('homepage', {layout : 'main'});
+//     });
 
 // TODO: Add a comment describing the functionality of the withAuth middleware
 router.get('/', withAuth, async (req, res) => {
