@@ -12,7 +12,7 @@ const { Op } = require('sequelize');
 //     res.render('homepage', {layout : 'main'});
 //     });
 
-// TODO: Add a comment describing the functionality of the withAuth middleware
+
 router.get('/', withAuth, async (req, res) => {
   try {
 
@@ -43,7 +43,7 @@ router.get('/', withAuth, async (req, res) => {
     res.render('homepage', {
       forums,
       searchName: search_name,
-      // TODO: Add a comment describing the functionality of this property
+      
       logged_in: req.session.logged_in,
     });
   } catch (err) {
