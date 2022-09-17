@@ -1,4 +1,4 @@
-INSERT INTO dev_table (id, name, email, password, games, bio)
+INSERT INTO ludus_db (id, name, email, password, games, bio)
 
 VALUES  (001, "Lernantino", "lernantino@gmail.com", "password12345", "Skyrim", "Not fond of cabinets"),
         (002, "Amiko", "Starcraft", "amiko2k20@aol.com", "password12345", "Matt started his career in programming towards the end of the Russian civil war in 1917. He wears size 16 shoes","matt.burns01@gmail.com"),
