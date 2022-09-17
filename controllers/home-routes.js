@@ -1,47 +1,60 @@
 const router = require('express').Router();
-const { User } = require('../models');
-const withAuth = require('../utils/auth');
+const { User, Forum, GameChat } = require('../models');
+const { withAuth, withAuthAPI } = require('../utils/auth');
+const { Op } = require('sequelize');
 
-// Route "/"
 
-// Route "/login"
 
-// TODO: Add a comment describing the functionality of the withAuth middleware
 router.get('/', withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] }
+    // Get all projects and JOIN with user data
+    const chatData = await GameChat.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
     });
 
-    const users = userData.map((project) => project.get({ plain: true }));
-
+    // Serialize data so the template can read it
+    const chats = chatData.map((gameChat) => gameChat.get({ plain: true }));
+console.log(req.session.logged_in);
+    // Pass serialized data and session flag into template
     res.render('homepage', {
-      users,
-      // TODO: Add a comment describing the functionality of this property
-      logged_in: req.session.logged_in,
+      layout : 'main', 
+      chats, 
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
+    console.log(req.session.logged_in);
   }
 });
 
-router.get('/login', (req, res) => {
-  // TODO: Add a comment describing the functionality of this if statement
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
+router.get('/profilePage', withAuth, async (req, res) => {
 
+  const dbUserData = await User.findByPk(req.session.user_id, {
+    attributes: ['id','user_name'],
+    include: Forum
+  });
+
+  const user = dbUserData.toJSON();
+
+  console.log(user);
+
+  res.render('user', {
+    user,
+    logged_in: req.session.logged_in,
+  });
+});
+
+router.get('/login',  (req, res) => {
   res.render('login');
 });
 
+router.get('/signUp',  (req, res) => {
+  res.render('signUp');
+});
+
 module.exports = router;
-
-
-// Route "/dashboard"
-
-// Route "/dashboard/new"
-
-// Route "/dashboard/edit/:id"
-
-// Route "/post/:id"

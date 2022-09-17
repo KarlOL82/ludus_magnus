@@ -1,20 +1,14 @@
-jQuery(logged_in).ready(function() {
-
-    Parse.$ = jQuery;
-    Parse.initialize("...", "...");
-
-    $('.form-logout').on('submit', function (e) {
-        // Prevent Default Submit Event
-        e.preventDefault();
-
-        console.log("Performing submit");
-        if ( Parse.User.current() ) {
-            Parse.User.logOut();
-
-            // check if really logged out
-            if (Parse.User.current())
-                console.log("Failed to log out!");
-        }
-        window.location.href = "/Sign_In.html";
+const logout = async () => {
+    const response = await fetch('/api/users/logout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
     });
-});
+  
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert('Failed to log out.');
+    }
+  };
+  
+  document.querySelector('#logout').addEventListener('click', logout);

@@ -10,23 +10,44 @@ class User extends Model {
 
 User.init(
   {
-    
-    userName:{
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
       type: DataTypes.STRING,
       allowNull: false
-  },
-  favoriteGame:{
-      type: DataTypes.STRING (50),
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [6],
+      },
+    },
+
+    favoriteGame: {
+      type: DataTypes.STRING(50),
       allowNull: true
-  },
-  userBio:{
-      type: DataTypes.STRING (500),
+    },
+    userBio: {
+      type: DataTypes.STRING(500),
       allowNull: true
-  },
-  location:{
+    },
+    location: {
       type: DataTypes.STRING(65),
       allowNull: false
-  }
+    }
   },
   {
     hooks: {
