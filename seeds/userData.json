@@ -5,7 +5,7 @@
     "email": "lernantino@gmail.com",
     "password": "password12345",
     "favoritegame": "Skyrim", 
-    "userBoi":"Not fond of cabinets",
+    "userBio":"Not fond of cabinets",
     "location": "Ohio"
   },
   {
@@ -14,7 +14,7 @@
     "email": "amiko2k20@aol.com",
     "password": "password12345",
     "favoritegame": "Starcraft", 
-    "userBoi":"Started her career in programming towards the end of the Russian civil war in 1917. She wears size 16 shoes",
+    "userBio":"Started her career in programming towards the end of the Russian civil war in 1917. She wears size 16 shoes",
     "location": "Washington"
   },
   {
@@ -23,7 +23,7 @@
     "email": "jordan99@msn.com",
     "password": "password12345",
     "favoritegame": "Darksouls", 
-    "userBoi":"Little is known about Jordan except for his love of chaising train",
+    "userBio":"Little is known about Jordan except for his love of chaising train",
     "location": "Montana"
   },
   {
@@ -32,7 +32,7 @@
     "email": "the_blake@yahoo.com",
     "password": "password12345",
     "favoritegame": "Escape from tarkov", 
-    "userBoi":"During early life he found himself facinated with birdes, to this day he sets aside an hour every mourning in attemps to catch his favorite bird the common Dickcissel",
+    "userBio":"During early life he found himself facinated with birdes, to this day he sets aside an hour every mourning in attemps to catch his favorite bird the common Dickcissel",
     "location": "Florida"
   }
 ]

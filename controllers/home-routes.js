@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Forum, GameChat } = require('../models');
-const { withAuth, withNoAuth } = require('../utils/auth');
+const { withAuth, withAuthAPI } = require('../utils/auth');
 const { Op } = require('sequelize');
 
 // Route "/"
@@ -9,56 +9,44 @@ const { Op } = require('sequelize');
 
 // router.get('/', (req, res) => {
     
-//     res.render('homepage', {layout : 'main'});
+//     res.render('homepage', );
 //     });
 
 
-router.get('/home-routes', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-
-    const where = {
-      user_id: {
-        [Op.ne]: req.session.user_id,
-      },
-    };
-
-    const { search_name } = req.query;
-
-    if(search_name) {
-      where.name = {
-        [Op.like]: `%${search_name}%`
-      };
-    }
-
-    const userData = await Forum.findAll({
-      where,
-      include: {
-        model: User,
-        attributes: ['id', 'forumtitle'],
-      },
+    // Get all projects and JOIN with user data
+    const chatData = await GameChat.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
     });
 
-    const forums = userData.map((forum) => forum.get({ plain: true }));
+    // Serialize data so the template can read it
+    const chats = chatData.map((gameChat) => gameChat.get({ plain: true }));
 
+    // Pass serialized data and session flag into template
     res.render('homepage', {
-      forums,
-      searchName: search_name,
-      
-      logged_in: req.session.logged_in,
+      layout : 'main', 
+      chats, 
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/profilePage', withAuth, async (req, res) => {
+router.get('/profilePage', withAuthAPI, async (req, res) => {
 
-  const userData = await User.findByPk(req.session.user_id, {
+  const dbUserData = await User.findByPk(req.session.user_id, {
     attributes: ['id','user_name'],
     include: Forum
   });
 
-  const user = userData.toJSON();
+  const user = dbUserData.toJSON();
 
   console.log(user);
 
@@ -68,11 +56,11 @@ router.get('/profilePage', withAuth, async (req, res) => {
   });
 });
 
-router.get('/login', withNoAuth, (req, res) => {
+router.get('/login',  (req, res) => {
   res.render('login');
 });
 
-router.get('/signUp', withNoAuth, (req, res) => {
+router.get('/signUp',  (req, res) => {
   res.render('signUp');
 });
 
