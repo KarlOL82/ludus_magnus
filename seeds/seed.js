@@ -18,10 +18,10 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  // await Forum.bulkCreate(foodItemData, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
+  await Forum.bulkCreate(forumData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   process.exit(0);
 };

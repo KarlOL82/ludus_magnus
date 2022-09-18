@@ -7,7 +7,7 @@ const { Op } = require('sequelize');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    
     const chatData = await GameChat.findAll({
       include: [
         {

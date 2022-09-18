@@ -32,6 +32,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // CREATE a location
+
 router.post('/', async (req, res) => {
   try {
     const chatData = await GameChat.create(req.body);
