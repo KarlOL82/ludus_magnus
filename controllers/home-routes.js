@@ -31,6 +31,36 @@ console.log(req.session.logged_in);
   }
 });
 
+
+router.get('/', withAuth, async (req, res) => {
+  try {
+    
+    const userData = await User.findAll({
+      // include: [
+      //   {
+      //     model: GameChat,
+      //     attributes: ['name'],
+      //   },
+      // ],
+    });
+
+    
+    const users = userData.map((user) => user.get({ plain: true }));
+console.log(req.session.logged_in);
+    
+    res.render('homepage', {
+      layout : 'main', 
+      users, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+    console.log(req.session.logged_in);
+  }
+});
+
+
+
 router.get('/profilePage', withAuth, async (req, res) => {
 
   const dbUserData = await User.findByPk(req.session.user_id, {
