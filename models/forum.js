@@ -19,7 +19,7 @@ Forum.init(
     //   type: DataTypes.STRING,
     //   allowNull: false,
     // },
-    forumtitle: {
+    forum_title: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
@@ -34,11 +34,11 @@ Forum.init(
         len: [30],
       },
     },
-    feedpost: {
+    previewText: {
         type: DataTypes.STRING,
         allowNull: false,
         validate:{
-            len: [500],
+            len: [100],
         }   
     }
 },
