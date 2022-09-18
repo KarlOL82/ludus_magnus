@@ -1,12 +1,13 @@
 <div class="mb-3">
-    {{#each gameChat}}
+    {{#each chats}}
   <label for="exampleFormControlInput1" id="chatUser" class="form-label">{{gameChat.user_id}}</label>
   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
 </div>
+
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" id="chatTextArea" class="form-label">{{gameChat.chatText}}</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   {{/each }}
 </div>
 
-{{!-- <script src="/js/gameChat.js"></script> --}}
+<script src="/js/gameChat.js"></script>
