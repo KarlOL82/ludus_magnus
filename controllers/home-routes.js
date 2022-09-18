@@ -21,7 +21,7 @@ router.get('/', withAuth, async (req, res) => {
     const chats = chatData.map((gameChat) => gameChat.get({ plain: true }));
 console.log(req.session.logged_in);
     
-    res.render('homepage', {
+    res.render('forum', {
       layout : 'main', 
       chats, 
       logged_in: req.session.logged_in 
