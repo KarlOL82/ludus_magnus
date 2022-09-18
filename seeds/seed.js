@@ -3,6 +3,7 @@ const { User, GameChat, Forum } = require('../models');
 
 const userData = require('./userData.json');
 const chatData = require('./chatData.json');
+const forumData = require('./forumData.json')
 
 console.log(userData);
 const seedDatabase = async () => {

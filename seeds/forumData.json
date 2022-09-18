@@ -1,0 +1,30 @@
+[
+    {
+        "id": "01",
+        "user_name": "Lernantino",
+        "forum_title": "Skyrim",
+        "game_name": "Skyrim",
+        "previewText": "I'm saying stuff"  
+    },
+    {
+        "id": "02",
+        "user_name": "Amiko",
+        "forum_title": "Dark Souls",
+        "game_name": "Dark Souls",
+        "previewText": "I disagree with me"  
+    },
+    {
+        "id": "03",
+        "user_name": "Jordan",
+        "forum_title": "Starcraft",
+        "game_name": "Starcraft",
+        "previewText": "Food is good"  
+    },
+    {
+        "id": "0",
+        "user_name": "Blake",
+        "forum_title": "Escape from tarkov",
+        "game_name": "Escape from tarkov",
+        "previewText": "Tarkov found me, I didn't escape."  
+    }
+]
