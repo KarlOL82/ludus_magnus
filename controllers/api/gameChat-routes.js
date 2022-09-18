@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const chatData = await GameChat.findByPk(req.params.id, {
-      // JOIN with travellers, using the Trip through table
+      
       include: User
     });
 
