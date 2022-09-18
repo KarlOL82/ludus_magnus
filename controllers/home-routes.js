@@ -31,6 +31,8 @@ console.log(req.session.logged_in);
   }
 });
 
+
+
 router.get('/profilePage', withAuth, async (req, res) => {
 
   const dbUserData = await User.findByPk(req.session.user_id, {
