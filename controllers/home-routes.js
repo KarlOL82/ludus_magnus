@@ -73,7 +73,7 @@ router.get('/profilePage', withAuth, async (req, res) => {
 
   res.render('profilePage', {
     layout: 'main',
-    user,
+    userData,
     logged_in: req.session.logged_in,
   });
 });
