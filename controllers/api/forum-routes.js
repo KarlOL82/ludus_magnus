@@ -1,7 +1,36 @@
 const router = require('express').Router();
-const { Forum } = require('../../models');
+const { Forum, GameChat } = require('../../models');
 
-// CREATE a trip
+router.get('/', async (req, res) => {
+    try {
+      const forumData = await Forum.findAll();
+      res.status(200).json(forumData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+
+  router.get('/:id', async (req, res) => {
+    try {
+      const forumData = await Forum.findByPk(req.params.id, {
+        
+        include: GameChat
+      });
+  
+      if (!forumData) {
+        res.status(404).json({ message: 'Conversation not found!' });
+        return;
+      }
+  
+      res.status(200).json(forumData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+
+
 router.post('/', async (req, res) => {
   try {
     const forumData = await Forum.create(req.body);
@@ -11,7 +40,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// DELETE a trip
+
 router.delete('/:id', async (req, res) => {
   try {
     const forumData = await Forum.destroy({

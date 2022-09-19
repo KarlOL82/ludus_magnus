@@ -15,10 +15,7 @@ Forum.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // username: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
+    
     forum_title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -43,12 +40,6 @@ Forum.init(
     }
 },
   {
-    hooks: {
-      async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
