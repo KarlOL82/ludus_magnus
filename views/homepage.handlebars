@@ -2,33 +2,13 @@
   <div class="bg-image" style="background-image: img src='/images/background1.jpg' ;"></div>
   <div class="layout layout-nav-slide">
 
-    <div class="main-container">
+    <div class="main-container p-2 m-2">
 
-      <div class="container">
+      <div class="container card">
         <div class="row justify-content-center">
           <div class="col-lg-11 col-xl-9">
             <section class="py-4 py-lg-5">
 
-              {{!-- <div class="mb-3">
-                
-                <label for="exampleFormControlInput1" id="chatUser" class="form-label">{{gameChat.user_id}}</label>
-<<<<<<< HEAD
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-              </div> --}}
-              
-=======
-
-              </div>
->>>>>>> 3c2e48c59f2314564e7b2a369d066a0c3fb3c6d4
-
-              {{!-- <div class="mb-3">
-                <label for="exampleFormControlTextarea1" id="chatTextArea"
-                  class="form-label">{{gameChat.chatText}}</label>
-<<<<<<< HEAD
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                 --}}
-              
               
                 <div id="chatCard" class="card p-2 m-2">
                 {{#each chats}}
@@ -44,49 +24,19 @@
                 {{/each}}
                 </div>
 
-
-                {{!-- <div>
-                <ul>
-                {{#each chats }}
-                <li>Game: {{game_name}}</li>
-                <li>Thread: {{chat_name}}</li>
-                <li>Comment: {{chatText}}</li>
-=======
-                  Forum description:
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">{{chat_name}}. 
-{{chatText}}. </textarea>
-                 <button >Click here to enter the {{game_name}} Forum!</button>
-
->>>>>>> 3c2e48c59f2314564e7b2a369d066a0c3fb3c6d4
-                {{/each }}
-               </ul> 
+              <div class="mb-3">
+              {{#with chats}}
+                <label for="exampleFormControlInput1" id="chatUser" class="form-label">{{email}}</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
               </div>
-                
-              </div> --}}
+              {{email}}
 
-<<<<<<< HEAD
-              
-
-              {{!-- {{#each forums}}
-<div class="card">
-  <div class="card-header">
-    {{game_name}}
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{forum_title}}</h5>
-    <p class="card-text">{{previewText}}</p>
-    <a href="./gameChat.handlebars" class="btn btn-primary">Join</a>
-  </div>
-</div>
-{{/each}} --}}
-=======
-
->>>>>>> 3c2e48c59f2314564e7b2a369d066a0c3fb3c6d4
-
-              
-
-            </section>
-            <section class="py-4 py-lg-5">
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" id="chatTextArea" class="form-label">{{gameChat.chatText}}</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              {{/with }}
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
 
             </section>
             <section class="py-4 py-lg-5">

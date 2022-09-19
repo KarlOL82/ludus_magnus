@@ -1,5 +1,5 @@
 :root {
-    /* declare a variable with `--` syntax */
+    
     --gunMetal: #30343F;
     --light: #FAFAFF;
     --litePurp: #E4D9FF;
@@ -17,7 +17,8 @@ body {
 };
 
 #chatCard {
-   padding: 12px; 
+   padding: 12px;
+   justify-content: space-evenly; 
 }
 
 
