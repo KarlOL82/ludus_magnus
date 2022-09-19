@@ -15,10 +15,7 @@ Forum.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // username: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
+    
     forum_title: {
       type: DataTypes.STRING,
       allowNull: false,

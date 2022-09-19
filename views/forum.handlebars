@@ -1,4 +1,4 @@
-{{#each forums}}
+{{#with forums}}
 <div class="card">
   <div class="card-header">
     {{game_name}}
@@ -9,7 +9,7 @@
     <a href="./gameChat.handlebars" class="btn btn-primary">Join</a>
   </div>
 </div>
-{{/each}}
+{{/with}}
 
 {{!-- <div class="container text-center">
   <div class="row">

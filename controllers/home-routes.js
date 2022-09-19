@@ -32,59 +32,49 @@ console.log(req.session.logged_in);
 });
 
 
-router.get('/', withAuth, async (req, res) => {
-  try {
+// router.get('/', withAuth, async (req, res) => {
+//   try {
     
-    const userData = await User.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+//     const userData = await User.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
 
     
-    const users = userData.map((user) => user.get({ plain: true }));
-console.log(req.session.logged_in);
+//     const users = userData.map((user) => user.get({ plain: true }));
+// console.log(req.session.logged_in);
     
-    res.render('homepage', {
-      layout : 'main', 
-      users, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-    console.log(req.session.logged_in);
-  }
-});
+//     res.render('homepage', {
+//       layout : 'main', 
+//       users, 
+//       logged_in: req.session.logged_in 
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//     console.log(req.session.logged_in);
+//   }
+// });
 
 
-router.get('/', withAuth, async (req, res) => {
-  try {
-    
-    const forumData = await Forum.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+router.get('/profilePage', withAuth, async (req, res) => {
 
-    
-    const forums = forumData.map((forum) => forum.get({ plain: true }));
-console.log(req.session.logged_in);
-    
-    res.render('forum', {
-      layout : 'main', 
-      users, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-    console.log(req.session.logged_in);
-  }
+  const userData = await User.findByPk(req.session.user_id, {
+    attributes: ['id','username'],
+    include: GameChat
+  });
+
+  const user = userData.toJSON();
+
+  console.log(user);
+
+  res.render('profilePage', {
+    user,
+    logged_in: req.session.logged_in,
+  });
 });
 
 
@@ -100,7 +90,7 @@ router.get('/profilePage', withAuth, async (req, res) => {
 
   console.log(user);
 
-  res.render('user', {
+  res.render('/profilePage', {
     user,
     logged_in: req.session.logged_in,
   });
