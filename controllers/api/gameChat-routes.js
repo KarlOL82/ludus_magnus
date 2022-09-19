@@ -25,6 +25,9 @@ router.get('/:id', async (req, res) => {
       return;
     }
 
+    res.render()
+    layout:
+
     res.status(200).json(chatData);
   } catch (err) {
     res.status(500).json(err);
