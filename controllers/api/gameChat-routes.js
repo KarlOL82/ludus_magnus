@@ -24,7 +24,9 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({ message: 'Conversation not found!' });
       return;
     }
-
+    res.render(gameChat, {
+      layout:"gameChat"
+    })
     res.status(200).json(chatData);
   } catch (err) {
     res.status(500).json(err);

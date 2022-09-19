@@ -1,6 +1,6 @@
 [
   {
-    "id": "08",
+    "id": "8",
     "chat_name": "Skyrim is good",
     "game_name": "Skyrim",
     "user_id": "01",
@@ -8,7 +8,7 @@
     
   },
   {
-    "id": "09",
+    "id": "9",
     "chat_name": "Dark Souls is bad",
     "game_name": "Dark Souls",
     "user_id": "02",
@@ -16,7 +16,7 @@
     
   },
   {
-    "id": "07",
+    "id": "7",
     "chat_name": "Starcraft and you",
     "game_name": "Starcraft",
     "user_id": "03",
@@ -24,7 +24,7 @@
     
   },
   {
-    "id": "06",
+    "id": "6",
     "chat_name": "OCD 4 COD",
     "game_name": "Call of Duty",
     "user_id": "01",
