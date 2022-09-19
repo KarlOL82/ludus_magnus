@@ -12,38 +12,22 @@
               <div class="mb-3">
                 {{#each chats }}
                 <label for="exampleFormControlInput1" id="chatUser" class="form-label">{{gameChat.user_id}}</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-              </div>
-              <div>
-                <ul>
-            
-                <li>{{game_name}}</li>
-                <li>{{chat_name}}</li>
-                <li>{{chatText}}</li>
-                <li>{{chatText}}</li>
-                <li>{{forum.forum_id}}</li>
-               </ul> 
+              <br>
+                {{game_name}}: Forum
+                <input class="form-control" id="exampleFormControlInput1" placeholder="Please enter your email here">
               </div>
 
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" id="chatTextArea"
                   class="form-label">{{gameChat.chatText}}</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  Forum description:
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">{{chat_name}}. 
+{{chatText}}. </textarea>
+                 <button >Click here to enter the {{game_name}} Forum!</button>
+
                 {{/each }}
               </div>
 
-              {{#each forums}}
-<div class="card">
-  <div class="card-header">
-    {{game_name}}
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{forum_title}}</h5>
-    <p class="card-text">{{previewText}}</p>
-    <a href="./gameChat.handlebars" class="btn btn-primary">Join</a>
-  </div>
-</div>
-{{/each}}
 
               
 
