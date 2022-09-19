@@ -20,6 +20,7 @@
                 <li>{{game_name}}</li>
                 <li>{{chat_name}}</li>
                 <li>{{chatText}}</li>
+                <li>{{chatText}}</li>
                </ul> 
               </div>
 
@@ -30,24 +31,18 @@
                 {{/each }}
               </div>
 
-              <div class="mb-3">
-                {{#each users }}
-                <label for="exampleFormControlInput1" id="chatUser" class="form-label">{{gameChat.user_id}}</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-              </div>
-              <div>
-            
-                {{favoriteGame}}
-                {{userBio}}
-                {{userBio}}
-              </div>
-
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" id="chatTextArea"
-                  class="form-label">{{gameChat.chatText}}</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                {{/each }}
-              </div>
+              {{#each forums}}
+<div class="card">
+  <div class="card-header">
+    {{game_name}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{forum_title}}</h5>
+    <p class="card-text">{{previewText}}</p>
+    <a href="./gameChat.handlebars" class="btn btn-primary">Join</a>
+  </div>
+</div>
+{{/each}}
 
               
 
