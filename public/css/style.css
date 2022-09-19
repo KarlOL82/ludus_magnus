@@ -16,6 +16,10 @@ body {
     background-color: red;
 };
 
+#chatCard {
+   padding: 12px; 
+}
+
 
 
 
