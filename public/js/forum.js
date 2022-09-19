@@ -1,4 +1,4 @@
-// const addUserFormHandler = async (event) => {
+// const addForumFormHandler = async (event) => {
 //     event.preventDefault();
   
 //     const author = document.querySelector('#chatUser').value.trim();
