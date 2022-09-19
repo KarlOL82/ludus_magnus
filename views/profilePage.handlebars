@@ -7,6 +7,7 @@
         <div>{{id}}</div>
         {{/if}}
     </div>
+    {{#each user}}
     <div class="useInfo col">
         <form>
             {{favoriteGame}}
@@ -19,6 +20,7 @@
         </form>
         <li>{{Forum}}</li>
     </div>
+    {{/each}}
 </div>   
 <footer>
     {{!-- <script src="/js/login.js"></script> --}}
