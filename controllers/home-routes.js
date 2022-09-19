@@ -36,12 +36,12 @@ router.get('/', withAuth, async (req, res) => {
   try {
     
     const userData = await User.findAll({
-      // include: [
-      //   {
-      //     model: GameChat,
-      //     attributes: ['name'],
-      //   },
-      // ],
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
     });
 
     
