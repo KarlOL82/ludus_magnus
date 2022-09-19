@@ -1,13 +1,25 @@
-<div class="mb-3">
-    {{#each chatText}}
+<div class="container card">
+  <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+    {{#with chats}}
+    <div class="card-header">{{user.user_name}}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{chat_name}}</h5>
+      <p class="card-text">{{chatText}}</p>
+    </div>
+    {{/with}}
+  </div>
+</div>
+
+  <div class="mb-3">
+    {{#with chats}}
   <label for="exampleFormControlInput1" id="chatUser" class="form-label">{{gameChat.user_id}}</label>
   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
+  </div>
 
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" id="chatTextArea" class="form-label">{{gameChat.chatText}}</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  {{/each }}
+  {{/with }}
   <button type="submit" class="btn btn-primary">Submit</button>
 </div>
 
