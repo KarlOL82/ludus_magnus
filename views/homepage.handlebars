@@ -12,26 +12,25 @@
               <div class="mb-3">
                 {{#each chats }}
                 <label for="exampleFormControlInput1" id="chatUser" class="form-label">{{gameChat.user_id}}</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <br>
+                {{game_name}}: Forum
+                <input class="form-control" id="exampleFormControlInput1" placeholder="Please enter your email here">
               </div>
-              <div>
-            
-                {{game_name}}
-                {{chat_name}}
-                {{chatText}}
-              </div>
-
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" id="chatTextArea"
                   class="form-label">{{gameChat.chatText}}</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  Forum description:
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">{{chat_name}}. 
+{{chatText}}. </textarea>
+                 <button >Click here to enter the {{game_name}} Forum!</button>
+
                 {{/each }}
               </div>
 
               <div class="mb-3">
                 {{#each users }}
                 <label for="exampleFormControlInput1" id="chatUser" class="form-label">{{gameChat.user_id}}</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Please enter your email here">
               </div>
               <div>
             
