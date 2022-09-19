@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// CREATE a location
+
 
 router.post('/', async (req, res) => {
   try {
@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// DELETE a location
+
 router.delete('/:id', async (req, res) => {
   try {
     const chatData = await GameChat.destroy({

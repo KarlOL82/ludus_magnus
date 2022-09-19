@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
   });
 
 
-// CREATE a trip
+
 router.post('/', async (req, res) => {
   try {
     const forumData = await Forum.create(req.body);
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// DELETE a trip
+
 router.delete('/:id', async (req, res) => {
   try {
     const forumData = await Forum.destroy({
