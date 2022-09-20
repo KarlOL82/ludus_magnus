@@ -21,6 +21,8 @@ Ludus Magnus is a simple online forum for discussing Console and PC video games.
 
 ## [Github Repo](https://github.com/KarlOL82/ludus_magnus/)
 
+![Main Menu](./assets/mainChat.png "Main Menu")
+
 ## Technology Used
 
 **JavaScript:**
