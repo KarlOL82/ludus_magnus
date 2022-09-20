@@ -17,9 +17,9 @@ Karl Linfeldt - [github](https://github.com/KarlOL82) - klinfeldt@gmail.com <br>
 
 Ludus Magnus is a simple online forum for discussing Console and PC video games.
 
-## [Deployed Page]()
+## [Deployed Page](https://enigmatic-cove-03555.herokuapp.com/)
 
-## [Github Repo](https://enigmatic-cove-03555.herokuapp.com/)
+## [Github Repo](https://github.com/KarlOL82/ludus_magnus)
 
 ![Main Menu](./assets/mainChat.png "Main Menu")
 
