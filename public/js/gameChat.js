@@ -6,7 +6,8 @@ const addChatFormHandler = async (event) => {
     });
     const author = document.querySelector('#chatUser').value.trim();
     const textChat = document.querySelector('#chatTextArea').value.trim();
-  
+    // const sumitButton = document.querySelector('#submit').value.trim();
+
     if (author && textChat) {
       const response = await fetch('/api/gameChat', {
         method: 'POST',
@@ -22,6 +23,4 @@ const addChatFormHandler = async (event) => {
   
   document
     .querySelector('#createChat')
-    
 
-    Element.addEventListener('submit', addChatFormHandler);
