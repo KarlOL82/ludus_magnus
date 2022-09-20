@@ -4,7 +4,7 @@
     "chat_name": "Skyrim is good",
     "game_name": "Skyrim",
     "user_id": "01",
-    "chatText": "Dragons are kickass"
+    "chatText": "Dragons are cool!"
     
   },
   {
@@ -12,7 +12,7 @@
     "chat_name": "Dark Souls is bad",
     "game_name": "Dark Souls",
     "user_id": "02",
-    "chatText": "NPCs are weird"
+    "chatText": "Wow, this is like really hard. I miss Farmville."
     
   },
   {
@@ -20,7 +20,7 @@
     "chat_name": "Starcraft and you",
     "game_name": "Starcraft",
     "user_id": "03",
-    "chatText": "Space is fun"
+    "chatText": "Space is fun, there's so much room for space activities."
     
   },
   {
@@ -28,7 +28,7 @@
     "chat_name": "OCD 4 COD",
     "game_name": "Call of Duty",
     "user_id": "01",
-    "chatText": "I totally shot that dude"
+    "chatText": "None of this is healthy. I don't see how any personal growth can come from this."
     
   }
 ]

@@ -1,4 +1,17 @@
-
+<div class="main-container p-2 m-2">
+  <div class="container card">
+    <div class="card mb-3" style="max-width: 18rem;">
+      {{#each chatData}}
+      <div class="card-header">{{#with userData}}{{user.user_name}}{{/with}}
+      <div class="card-body">
+        <h5 class="card-title">{{chat_name}}</h5>
+        <p class="card-text">{{chatText}}</p>
+      </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  
 Please provide your Username:
 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="amiko">
 <label for="exampleFormControlTextarea1" id="chatTextArea" class="form-label">{{gameChat.chatText}}</label>
