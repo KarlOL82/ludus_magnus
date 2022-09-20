@@ -1,6 +1,6 @@
 const User = require('./user');
 const GameChat = require('./gameChat');
-const Forum = require('./Forum');
+const Forum = require('./forum');
 
 Forum.hasMany(GameChat, {
     foreignKey: 'forum_id',
