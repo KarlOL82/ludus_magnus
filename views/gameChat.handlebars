@@ -1,14 +1,25 @@
-<div class="mb-3">
-    {{#each chats}}
+
+Please provide your Username:
+<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="amiko">
+<label for="exampleFormControlTextarea1" id="chatTextArea" class="form-label">{{gameChat.chatText}}</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="This game is the best ever!"></textarea>
+  <div class="mb-3">
+    
+    {{#with chats}}
   <label for="exampleFormControlInput1" id="chatUser" class="form-label">{{gameChat.user_id}}</label>
   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
+  </div>
 
 <div class="mb-3">
+  
   <label for="exampleFormControlTextarea1" id="chatTextArea" class="form-label">{{gameChat.chatText}}</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  {{/each }}
+  {{/with }}
   <button type="submit" class="btn btn-primary">Submit</button>
-</div>
+
+
+
 
 <script src="/js/gameChat.js"></script>
+
+
