@@ -19,7 +19,7 @@ Ludus Magnus is a simple online forum for discussing Console and PC video games.
 
 ## [Deployed Page]()
 
-## [Github Repo](https://github.com/KarlOL82/ludus_magnus/)
+## [Github Repo](https://https://enigmatic-cove-03555.herokuapp.com/)
 
 ![Main Menu](./assets/mainChat.png "Main Menu")
 
