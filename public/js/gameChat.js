@@ -1,6 +1,9 @@
 const addChatFormHandler = async (event) => {
     event.preventDefault();
-  
+    const btn = document.querySelector('.btn');
+    btn.addEventListener('click', function(event){
+       console.log('Button Clicked');
+    });
     const author = document.querySelector('#chatUser').value.trim();
     const textChat = document.querySelector('#chatTextArea').value.trim();
   
@@ -12,8 +15,6 @@ const addChatFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.reload();
-      } else {
         alert('Not a thing');
       }
     }
@@ -21,4 +22,6 @@ const addChatFormHandler = async (event) => {
   
   document
     .querySelector('#createChat')
-    .addEventListener('submit', addChatFormHandler);
+    
+
+    Element.addEventListener('submit', addChatFormHandler);
